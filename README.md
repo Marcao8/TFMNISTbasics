@@ -1,2 +1,2 @@
 # TFMNISTbasics
-Basic Tensorflow example usage for MNIST zipcode analysis.
+Basic Tensorflow CNN example usage for MNIST zipcode analysis, with thoughts and comments.
