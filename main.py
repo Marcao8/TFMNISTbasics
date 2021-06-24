@@ -21,7 +21,7 @@ n_hidden = 390 # Number of hidden perceptrons
 n_output = 10
 W_i = tf.Variable(np.random.uniform(-0.0,0.1,[784, n_hidden]).astype(np.float32)) # Number and type of [Input,Output] Nodes, filled with zeros
 b_i = tf.Variable(np.random.uniform(-0.1,0.1,n_hidden),dtype=np.float32)         # Biase according to number of Output nodes (10 for 10 Numbers)
-# do i have to iniatiate I,h,O all with random numbers?
+
 ######Initialization for Hidden Layer Network######
 # dont initialize weights to zero but to a small number
 W_o = tf.Variable(np.random.uniform(-0.2,0.1,[n_hidden,n_output]).astype(np.float32)) #Connect Input layer size to hidden Layer, fill with random numbers
@@ -31,7 +31,7 @@ b_o = tf.Variable(np.random.uniform(-0.1,0.1,n_output),dtype=np.float32) #Bias a
 """
 Training
 
-The main training loop, using cross-entropy as a loss function. We regularly print the current loss and accuracy to check progress.
+The main training loop, using cross-entropy as a loss function. Regularly print the current loss and accuracy to check progress.
 
 Note that we compute the “logits”, which is the common name for pre-softmax values. They can be interpreted as log unnormalized probabilities and represent a “score” for each class.
 """
@@ -61,7 +61,7 @@ for step in range(train_steps):
         print("Loss: {} Accuracy is: {} ".format(xent, acc))
         
 """
-We can use the trained model to predict labels on the test set (10000 images) and check the model’s accuracy. You should get around 0.9 (90%) here.
+We can use the trained model to predict labels on the test set (10000 images) and check the model’s accuracy. Around 0.9 (90%) accuracy.
 """
 test_preds = tf.matmul(tf.nn.relu(tf.matmul(data.test_data, W_i)+b_i),W_o)+b_o
 test_preds = tf.argmax(test_preds, axis=1, output_type=tf.int32)
