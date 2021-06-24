@@ -70,8 +70,10 @@ plt.imshow(test_images[2], cmap="Greys_r")
 print("\n===============================")
 print("Test Accuracy is: {0:.3f} %".format(acc*100))
 
-#Take away: adding a hidden layer of (input+output)/2 improves the accurecy. That is because non linear seperations are now possible
-#Before HL: Training(shuffeld) acc was 89 to 94 % and test was 91.94 now with Hl it is 87 to 95 with 94.1% at test depending on random seed start With more traing it gets close to 100%
-#Learning rate:Train_steps ratio is crucial for steadyness of the final result
-#Learning rate close to 1 but not higher works best for small training sizes(100)
-# changing the initiation weights to unsymmetric values detoriated the learning for small batches
+"""
+Take away: adding a hidden layer of (input+output)/2 improves the accurecy. That is because non linear seperations are now possible
+Before HL: Training(shuffeld) acc was 89 to 94 % and test was 91.94 now with Hl it is 87 to 95 with 94.1% at test depending on random seed start With more traing it gets close to 100%
+Learning rate:Train_steps ratio is crucial for steadyness of the final result
+Learning rate close to 1 but not higher works best for small training sizes(100)
+changing the initiation weights to unsymmetric values detoriated the learning for small batches
+"""
